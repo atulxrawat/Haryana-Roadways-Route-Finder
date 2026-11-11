@@ -5,7 +5,7 @@ An end-to-end Business Intelligence project built using **Power BI**, **Power Qu
 The project transforms raw timetable PDFs into an interactive analytics solution, enabling users to analyze the transportation network through a Power BI dashboard and search routes through a companion web application.
 
 ## 🚀 Live Website
-**[https://gargsuhani.github.io/Haryana-Roadways-Route-Finder/](https://gargsuhani.github.io/Haryana-Roadways-Route-Finder/)**
+**[https://atulxrawat.github.io/Haryana-Roadways-Route-Finder/](https://atulxrawat.github.io/Haryana-Roadways-Route-Finder/)**
 
 ---
 
