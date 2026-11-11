@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Takhta — North India Bus Departure Board</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-top">
+      <div class="brand"></div>
+    </div>
+    <h1 class="hero-title">Find your bus.</h1>
+    <p class="hero-sub">Haryana Roadways schedule — 18,893 scheduled departures across 92 origin towns in Punjab, Haryana, Delhi &amp; Rajasthan, filtered by route and time of day.</p>
+  </header>
+
+  <section class="panel search-panel" aria-label="Search departures">
+    <form id="searchForm" autocomplete="off">
+      <div class="field-row">
+        <div class="field field-from">
+          <label for="fromInput">From</label>
+          <input type="text" id="fromInput" list="fromList" placeholder="e.g. Chandigarh">
+          <datalist id="fromList"></datalist>
+        </div>
+        <button type="button" class="swap-btn" id="swapBtn" title="Swap From/To" aria-label="Swap from and to">⇄</button>
+        <div class="field field-to">
+          <label for="toInput">To</label>
+          <input type="text" id="toInput" list="toList" placeholder="e.g. Delhi">
+          <datalist id="toList"></datalist>
+        </div>
+      </div>
+
+      <div class="time-row-container">
+        <div class="field field-wide">
+          <label>Time of day</label>
+          <div class="chip-group" id="timeChips"></div>
+        </div>
+        <div id="resultCount"></div>
+      </div>
+
+      <div class="adv-toggle-row">
+        <button type="button" class="adv-toggle" id="toggleAdvBtn">
+          <span class="adv-toggle-icon">＋</span> ADVANCED FILTERS
+        </button>
+      </div>
+
+      <div class="field-row adv-row" id="advRow" hidden>
+        <div class="field">
+          <label for="typeSelect">Bus type</label>
+          <select id="typeSelect">
+            <option value="">Any type</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="daysSelect">Service days</label>
+          <select id="daysSelect">
+            <option value="">Any days</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="sortSelect">Sort by</label>
+          <select id="sortSelect">
+            <option value="time">Departure time</option>
+            <option value="stops">Fewest stops</option>
+          </select>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <section class="panel results-panel" aria-label="Departure results">
+    <div class="results-head">
+      <div>Time</div>
+      <div>Route</div>
+      <div>Category / Type</div>
+      <div>Operator / Days</div>
+      <div>Stops</div>
+    </div>
+    <div class="results-body" id="resultsBody"></div>
+    <div class="empty-state" id="emptyState" hidden>
+      <div class="empty-glyph">▧</div>
+      <div class="empty-title">NO DEPARTURES MATCH THESE FILTERS</div>
+      <div class="empty-sub">Try a different origin town, or clear the time-of-day filter to widen the board.</div>
+    </div>
+    <div class="more-note" id="moreNote" hidden></div>
+  </section>
+
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
